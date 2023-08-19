@@ -2,6 +2,11 @@
 
 This document provides an overview of the endpoints available in the Node.js server for interacting with the GNews API.
 
+## Installation Guide
+
+- npm i
+- node App.js
+
 ## Server Information
 
 - Base URL: http://localhost:3000
