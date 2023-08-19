@@ -5,6 +5,25 @@ const app = express();
 const port = 3000;
 
 let savedArticles = [];
+app.get('/fetch-articles', (req, res) => {
+    const { author, title, count } = req.query;
+
+    const filteredArticles = savedArticles.filter(article => {
+        let match = true;
+
+        if (author && article.source.name !== author) {
+            match = false;
+        }
+
+        if (title && !article.title.toLowerCase().includes(title.toLowerCase())) {
+            match = false;
+        }
+
+        return match;
+    }).slice(0, count || savedArticles.length);
+
+    res.json(filteredArticles);
+});
 
 
 app.listen(port, async () => {
