@@ -32,7 +32,7 @@ app.listen(port, async () => {
     try {
         const response = await axios.get('https://gnews.io/api/v4/top-headlines', {
             params: {
-                token: '', // Replace with GNews API key
+                token: 'd61f83bc393e4276b211489eaa74ae19', 
             },
         });
 
